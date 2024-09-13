@@ -1,0 +1,41 @@
+[
+    {
+        "Verification Prebuild string": "<div style=\"margin-top: 30px;font-style: italic;\"><p><strong>Verification:</strong></p><p>Verified on oath today the [Day] Day of [Month] [Year] that the contents of the above paragraphs are true and correct to the best of my knowledge and nothing has been concealed.</p> </div>"
+    },
+    {
+        "footer": "<div style=\"margin-top: 40px; text-align: right\"><p class=\"large-font bold\">Petitioner</p><p style=\"height: 6px; <div style=\"height: 6px;font-weight: bold;font-size: 11pt;margin-right: 20px;margin-bottom: 10px;\"> <p>[Advocate Name]</p><p>[Advocate Of]</p> <p>[Court Name]</p></div></div>"
+    },
+    {
+        "plaintiff_object": "<p><strong>[Plaintiff]</strong>, [Plaintiff Son/Daughter] of [Plaintiff Father Name], Resident of [Plaintiff Address].</p>"
+    },
+    {
+        "defendant_object": "<p><strong>[Defendant]</strong>, [Defendant Son/Daughter] of [Defendant Father Name], Resident of [Defendant Address].</p>"
+    },
+    {
+        "court_header": "<h1 style=\"margin-bottom: 60px; font-size: 20px; text-align: center;\">IN THE COURT OF SENIOR CIVIL/FAMILY JUDGE LAHORE</h1>"
+    },
+    {
+        "plaintiff_info": "<div class=\"address\"><p><strong>[Plaintiff]</strong>, [Plaintiff Son/Daughter] of [Plaintiff Father Name], Resident of [Plaintiff Address].</p><p style=\"text-align: right;\"><strong>Plaintiff</strong></p></div>"
+    },
+    {
+        "versus": "<div class=\"address\"><p style=\"text-align: center;\"><strong>Versus</strong></p></div>"
+    },
+    {
+        "defendant_info": "<div class=\"address\"><p><strong>[Defendant]</strong>, [Defendant Son/Daughter] of [Defendant Father Name], Resident of [Defendant Address].</p><p style=\"text-align: right;\"><strong>Defendant</strong></p></div>"
+    },
+    {
+        "suit_title": "<h2 style=\"font-size: 18px; margin-bottom: 10px; text-align: center; text-decoration: underline;\">SUIT FOR DISSOLUTION OF MARRIAGE.</h2>"
+    },
+    {
+        "respectfully_sheweth": "<div class=\"content\" style=\"margin-bottom: 20px;\"><h4>Respectfully Sheweth:</h4><div>[AI Generated]</div></div>"
+    },
+    {
+        "prayer": "<div class=\"prayer\" style=\"margin-top: 20px;\"><p><strong>PRAYER:</strong></p><p>In view of the above-mentioned facts and circumstances, it is most respectfully prayed that the titled suit may kindly be decreed in favor of the plaintiff and against the defendant on the following terms:</p><ul style=\"margin: 0; padding-left: 40px;\"><li style=\"margin-bottom: 10px;\">A decree for dissolution of marriage may kindly be passed in favor of the plaintiff and against the defendant with costs.</li><li>Any other relief which this honorable court deems fit and proper in the circumstances of the case may also be awarded in favor of the plaintiff.</li></ul></div>"
+    },
+    {
+        "verification": "<div class=\"verification\" style=\"margin-top: 30px; font-style: italic;\"><p><strong>Verification:</strong></p><p>Verified on oath today the [Day] Day of [Month] [Year] that the contents of the above paragraphs are true and correct to the best of my knowledge and nothing has been concealed.</p></div>"
+    },
+    {
+        "signature": "<div class=\"signature\" style=\"margin-top: 40px; text-align: right;\"><p><strong>Plaintiff</strong></p><h3 style=\"text-align: center;\">Through:</h3><p><strong>[Advocate Name]</strong></p><p>[Advocate of]</p><p>[Court Address]</p></div>"
+    }
+]

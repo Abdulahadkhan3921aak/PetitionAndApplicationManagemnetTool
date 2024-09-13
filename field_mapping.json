@@ -1,0 +1,344 @@
+{
+    "[Civil Suit]": {
+        "label": "Civil Suit Number",
+        "id": "CivilSuitNumber",
+        "name": "CivilSuitNumber",
+        "type": "text",
+        "required": true
+    },
+    "[Plaintiff]": {
+        "label": "Plaintiff Information",
+        "id": "Plaintiff",
+        "name": "Plaintiff",
+        "type": "list",
+        "required": true,
+        "fields": [
+            {
+                "label": "Plaintiff's Full Name",
+                "id": "PlaintiffName",
+                "name": "PlaintiffName",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Plaintiff's Gender",
+                "id": "PlaintiffGender",
+                "name": "PlaintiffGender",
+                "type": "radio",
+                "options": [
+                    {
+                        "label": "Son",
+                        "value": "Son"
+                    },
+                    {
+                        "label": "Daughter",
+                        "value": "Daughter"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "label": "Plaintiff's Father's Name",
+                "id": "PlaintiffFatherName",
+                "name": "PlaintiffFatherName",
+                "type": "text",
+                "required": false
+            },
+            {
+                "label": "Plaintiff's Address",
+                "id": "PlaintiffAddress",
+                "name": "PlaintiffAddress",
+                "type": "textarea",
+                "required": false
+            }
+        ]
+    },
+    "[Defendant]": {
+        "label": "Defendant Information",
+        "id": "Defendant",
+        "name": "Defendant",
+        "type": "list",
+        "required": true,
+        "fields": [
+            {
+                "label": "Defendant's Full Name",
+                "id": "DefendantName",
+                "name": "DefendantName",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Defendant's Gender",
+                "id": "DefendantGender",
+                "name": "DefendantGender",
+                "type": "radio",
+                "options": [
+                    {
+                        "label": "Son",
+                        "value": "Son"
+                    },
+                    {
+                        "label": "Daughter",
+                        "value": "Daughter"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "label": "Defendant's Father's Name",
+                "id": "DefendantFatherName",
+                "name": "DefendantFatherName",
+                "type": "text",
+                "required": false
+            },
+            {
+                "label": "Defendant's Address",
+                "id": "DefendantAddress",
+                "name": "DefendantAddress",
+                "type": "textarea",
+                "required": false
+            }
+        ]
+    },
+    "[Title]": {
+        "label": "Case Title",
+        "id": "CaseTitle",
+        "name": "CaseTitle",
+        "type": "text",
+        "required": true
+    },
+    "[Grounds]": {
+        "label": "Grounds of the Case",
+        "id": "CaseGrounds",
+        "name": "CaseGrounds",
+        "type": "textarea",
+        "required": true
+    },
+    "[Prayers]": {
+        "label": "Prayers/Reliefs Sought",
+        "id": "CasePrayers",
+        "name": "CasePrayers",
+        "type": "textarea",
+        "required": true
+    },
+    "[Advocate Name]": {
+        "label": "Advocate's Full Name",
+        "id": "AdvocateName",
+        "name": "AdvocateName",
+        "type": "text",
+        "required": true
+    },
+    "[Court Address]": {
+        "label": "Court Address",
+        "id": "CourtAddress",
+        "name": "CourtAddress",
+        "type": "text",
+        "required": false
+    },
+    "[Case FIR No.]": {
+        "label": "FIR Number",
+        "id": "case-fir-number",
+        "name": "Case_FIR_Number",
+        "type": "text",
+        "required": true
+    },
+    "[Dated]": {
+        "label": "Date",
+        "id": "date",
+        "name": "Date",
+        "type": "date",
+        "required": true
+    },
+    "[Offence]": {
+        "label": "Offence",
+        "id": "offence",
+        "name": "Offence_US",
+        "type": "text",
+        "required": true
+    },
+    "[Police Station]": {
+        "label": "Police Station",
+        "id": "police-station-address",
+        "name": "Police_Station_Address",
+        "type": "text",
+        "required": true
+    },
+    "[In the Court of]": {
+        "label": "Court Name",
+        "id": "court-name",
+        "name": "Court_Name",
+        "type": "text",
+        "required": true
+    },
+    "[Applicant Name]": {
+        "label": "Applicant's Full Name",
+        "id": "applicant-name",
+        "name": "Applicant_Name",
+        "type": "text",
+        "required": true
+    },
+    "[S/O or D/O]": {
+        "label": "S/O or D/O",
+        "id": "S/O_D/O",
+        "name": "SO_DO",
+        "type": "radio",
+        "options": [
+            {
+                "label": "S/O",
+                "value": "S/O"
+            },
+            {
+                "label": "D/O",
+                "value": "D/O"
+            }
+        ],
+        "required": true
+    },
+    "[Father Name]": {
+        "label": "Father's Name",
+        "id": "father-name",
+        "name": "Father_Name",
+        "type": "text",
+        "required": true
+    },
+    "[Applicant Address]": {
+        "label": "Applicant's Address",
+        "id": "applicant-address",
+        "name": "Applicant_Address",
+        "type": "text",
+        "required": true
+    },
+    "[Respondent Name]": {
+        "label": "Respondent's Name",
+        "id": "respondent-name",
+        "name": "Respondent_Name",
+        "type": "text",
+        "required": true
+    },
+    "[Vehicle Company]": {
+        "label": "Vehicle Company",
+        "id": "vehicle-company",
+        "name": "Vehicle_Company",
+        "type": "text",
+        "required": true
+    },
+    "[Vehicle Color]": {
+        "label": "Vehicle Color",
+        "id": "vehicle-color",
+        "name": "Vehicle_Color",
+        "type": "text",
+        "required": true
+    },
+    "[Registration Number]": {
+        "label": "Registration Number",
+        "id": "registration-number",
+        "name": "Registration_Number",
+        "type": "text",
+        "required": true
+    },
+    "[Model]": {
+        "label": "Model",
+        "id": "model-year",
+        "name": "Model_Year",
+        "type": "text",
+        "required": true
+    },
+    "[Engine Number]": {
+        "label": "Engine Number",
+        "id": "engine-number",
+        "name": "Engine_Number",
+        "type": "text",
+        "required": true
+    },
+    "[Chassis Number]": {
+        "label": "Chassis Number",
+        "id": "chasis-number",
+        "name": "Chasis_Number",
+        "type": "text",
+        "required": true
+    },
+    "[Case Details]": {
+        "label": "Case Details",
+        "id": "ai-generated-text",
+        "name": "AI_Generated_Text",
+        "type": "textarea",
+        "required": false
+    },
+    "[Case Description]": {
+        "label": "Case Description",
+        "id": "ai-generated-text",
+        "name": "AI_Generated_Text",
+        "type": "textarea",
+        "required": false
+    },
+    "[AI Generated Text]": {
+        "label": "Case Description",
+        "id": "ai-generated-text",
+        "name": "AI_Generated_Text",
+        "type": "textarea",
+        "required": false
+    },
+    "[Ai Generated Text]": {
+        "label": "Case Description",
+        "id": "ai-generated-text",
+        "name": "AI_Generated_Text",
+        "type": "textarea",
+        "required": false
+    },
+    "[AI Generated]": {
+        "label": "Case Description",
+        "id": "ai-generated-text",
+        "name": "AI_Generated_Text",
+        "type": "textarea",
+        "required": false
+    },
+    "[Advocate's Name]": {
+        "label": "Advocate's Name",
+        "id": "advocates-name",
+        "name": "Advocates_Name",
+        "type": "text",
+        "required": true
+    },
+    "[Advocate's Office Address]": {
+        "label": "Advocate's Office / Court Address",
+        "id": "advocates-office-address",
+        "name": "Office_Address",
+        "type": "text",
+        "required": true
+    },
+    "[C.C Number]": {
+        "label": "C.C Number",
+        "id": "case-number",
+        "name": "CC_Number",
+        "type": "text",
+        "required": true
+    },
+    "[District]": {
+        "label": "District",
+        "id": "district",
+        "name": "District",
+        "type": "text",
+        "required": true
+    },
+    "[Day]": {
+        "label": "Day",
+        "id": "day",
+        "name": "Day",
+        "type": "text",
+        "required": true
+    },
+    "[Month]": {
+        "label": "Month",
+        "id": "month",
+        "name": "Month",
+        "type": "text",
+        "required": true
+    },
+    "[Year]": {
+        "label": "Year",
+        "id": "year",
+        "name": "Year",
+        "type": "text",
+        "required": true
+    }
+}
