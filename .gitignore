@@ -3,3 +3,5 @@ models/*
 templates/*
 
 ./function_app.py
+
+./__pycache__
