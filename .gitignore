@@ -1,0 +1,5 @@
+models/*
+
+templates/*
+
+./function_app.py

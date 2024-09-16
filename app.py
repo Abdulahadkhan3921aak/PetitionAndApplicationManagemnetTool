@@ -16,7 +16,7 @@ class HTMLPreviewTool(tk.Tk):
         super().__init__()
 
         self.title("HTML Preview Tool")
-        self.geometry("1280x720")
+        self.geometry("1633x768")
 
         # Create frames for the layout
         self.html_frame = tk.Frame(self)
@@ -41,7 +41,7 @@ class HTMLPreviewTool(tk.Tk):
         self.html_code_text = scrolledtext.ScrolledText(
             self.html_frame,
             wrap=tk.WORD,
-            width=60,
+            width=90,
             height=30,
         )
         self.html_code_text.pack(fill="both", expand=True)

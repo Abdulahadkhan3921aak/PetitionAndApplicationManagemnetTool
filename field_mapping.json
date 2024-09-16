@@ -114,6 +114,13 @@
         "type": "textarea",
         "required": true
     },
+    "[Prayer]": {
+        "label": "Prayers/Reliefs Sought",
+        "id": "CasePrayers",
+        "name": "CasePrayers",
+        "type": "textarea",
+        "required": true
+    },
     "[Prayers]": {
         "label": "Prayers/Reliefs Sought",
         "id": "CasePrayers",
@@ -121,10 +128,10 @@
         "type": "textarea",
         "required": true
     },
-    "[Advocate Name]": {
-        "label": "Advocate's Full Name",
-        "id": "AdvocateName",
-        "name": "AdvocateName",
+    "[Advocate's Affiliation:]": {
+        "label": "Advocate's Affiliation:",
+        "id": "court_name",
+        "name": "CourtOF",
         "type": "text",
         "required": true
     },
@@ -177,6 +184,30 @@
         "type": "text",
         "required": true
     },
+    "[Plaintiff Name]": {
+        "label": "Applicant's Full Name",
+        "id": "applicant-name",
+        "name": "Applicant_Name",
+        "type": "text",
+        "required": true
+    },
+    "[Plaintiff Son/Daughter]": {
+        "label": "S/O or D/O",
+        "id": "S/O_D/O",
+        "name": "SO_DO",
+        "type": "radio",
+        "options": [
+            {
+                "label": "S/O",
+                "value": "S/O"
+            },
+            {
+                "label": "D/O",
+                "value": "D/O"
+            }
+        ],
+        "required": true
+    },
     "[S/O or D/O]": {
         "label": "S/O or D/O",
         "id": "S/O_D/O",
@@ -194,6 +225,13 @@
         ],
         "required": true
     },
+    "[Plaintiff Father Name]": {
+        "label": "Father's Name",
+        "id": "father-name",
+        "name": "Father_Name",
+        "type": "text",
+        "required": true
+    },
     "[Father Name]": {
         "label": "Father's Name",
         "id": "father-name",
@@ -201,10 +239,24 @@
         "type": "text",
         "required": true
     },
+    "[Plaintiff Address]": {
+        "label": "Applicant's Address",
+        "id": "applicant-address",
+        "name": "Applicant_Address",
+        "type": "text",
+        "required": true
+    },
     "[Applicant Address]": {
         "label": "Applicant's Address",
         "id": "applicant-address",
         "name": "Applicant_Address",
+        "type": "text",
+        "required": true
+    },
+    "[Defendant Name]": {
+        "label": "Respondent's Name",
+        "id": "respondent-name",
+        "name": "Respondent_Name",
         "type": "text",
         "required": true
     },
@@ -338,6 +390,41 @@
         "label": "Year",
         "id": "year",
         "name": "Year",
+        "type": "text",
+        "required": true
+    },
+    "[Case Number]": {
+        "label": "Case Number",
+        "id": "case-number",
+        "name": "Case_Number",
+        "type": "text",
+        "required": true
+    },
+    "[Case Type]": {
+        "label": "Case Type",
+        "id": "case-type",
+        "name": "Case_Type",
+        "type": "text",
+        "required": true
+    },
+    "[Plaintiff/Petitioner/Appellant/Complainant Name:]": {
+        "label": "Plaintiff/Petitioner/Appellant/Complainant Name:",
+        "id": "plaintiff_name",
+        "name": "PlaintiffName",
+        "type": "text",
+        "required": true
+    },
+    "[Defendant/Respondent/Accused Name:]": {
+        "label": "Defendant/Respondent/Accused Name:",
+        "id": "defendant_name",
+        "name": "Defendant",
+        "type": "text",
+        "required": true
+    },
+    "[C.C No:]": {
+        "label": "C.C No:",
+        "id": "cc_number",
+        "name": "CCNumber",
         "type": "text",
         "required": true
     }
