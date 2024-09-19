@@ -1,5 +1,12 @@
+from typing import List, Dict
+
+
 def function_app_parser(
-    filename, form, filename_with_underscores, replace_list, functions_list
+    filename: str,
+    form,
+    filename_with_underscores: str,
+    replace_list: List[Dict[str, str]],
+    prompt_replace_list: List[Dict[str, str]],
 ):
 
     function_app_line = []
@@ -17,39 +24,41 @@ def function_app_parser(
     for field in form["fields"]:
         if field["type"] != "list":
             field_extractions += (
-                f'          {field["name"]} = req_body.get("{field["name"]}")\n'
+                f'        {field["name"]} = req_body.get("{field["name"]}")\n'
             )
-            for key in replace_list:
-                if field["name"] in key:
-                    replace_text += f'          html_template = html_template.replace([{key}], {field["name"]} if {field["name"]} else "")\n'
+            for keys in replace_list:
+                for key, value in keys.items():
+                    if field["name"] == value:
+                        replace_text += f'        html_template = html_template.replace("[{value}]", {field["name"]} if {field["name"]} else "")\n'
 
-            for key in functions_list:
-                if field["name"] in key:
-                    replace_text += f'          html_template = html_template.replace([{key}], {key}({field["name"]} if {field["name"]} else ""))\n'
+            for keys in prompt_replace_list:
+                for key, value in keys.items():
+                    if field["name"] == value:
+                        replace_text += f'        html_template = html_template.replace("[{value}]", {field["name"]} if {field["name"]} else "")\n'
 
         elif field["type"] == "list" and field["name"] == "Plaintiff":
-            field_extractions += """            Plaintiff = request_data.get("Plaintiff")
-            PlaintiffsNames = [x.get("PlaintiffName") for x in Plaintiff]
-            PlaintiffString = "".join(
-                AllTemplates.plaintiff_object.replace("[Plaintiff]", x.get("PlaintiffName"))
-                .replace("[Plaintiff Son/Daughter]", x.get("PlaintiffSonDaughter"))
-                .replace("[Plaintiff Father Name]", x.get("PlaintiffFatherName"))
-                .replace("[Plaintiff Address]", x.get("PlaintiffAddress"))
-                + "<br>"
-                for x in Plaintiff
-)
-        """
+            field_extractions += """        Plaintiff = request_data.get("Plaintiff")
+        PlaintiffsNames = [x.get("PlaintiffName") for x in Plaintiff]
+        PlaintiffString = "".join(
+            AllTemplates.plaintiff_object.replace("[Plaintiff]", x.get("PlaintiffName"))
+            .replace("[Plaintiff Son/Daughter]", x.get("PlaintiffSonDaughter"))
+            .replace("[Plaintiff Father Name]", x.get("PlaintiffFatherName"))
+            .replace("[Plaintiff Address]", x.get("PlaintiffAddress"))
+            + "<br>"
+            for x in Plaintiff
+            )
+"""
         elif field["type"] == "list" and field["name"] == "Defendant":
-            field_extractions += """            Defendant = request_data.get("Defendant")
-            DefendantsNames = [x.get("DefendantName") for x in Defendant]
-            DefendantString = "".join(
-                AllTemplates.defendant_object.replace("[Defendant]", x.get("DefendantName"))
-                .replace("[Defendant Son/Daughter]", x.get("DefendantSonDaughter"))
-                .replace("[Defendant Father Name]", x.get("DefendantFatherName"))
-                .replace("[Defendant Address]", x.get("DefendantAddress"))
-                + "<br>"
-                for x in Defendant
-                    )
+            field_extractions += """        Defendant = request_data.get("Defendant")
+        DefendantsNames = [x.get("DefendantName") for x in Defendant]
+        DefendantString = "".join(
+            AllTemplates.defendant_object.replace("[Defendant]", x.get("DefendantName"))
+            .replace("[Defendant Son/Daughter]", x.get("DefendantSonDaughter"))
+            .replace("[Defendant Father Name]", x.get("DefendantFatherName"))
+            .replace("[Defendant Address]", x.get("DefendantAddress"))
+            + "<br>"
+            for x in Defendant
+                )
 """
 
     # Template for the function
@@ -61,20 +70,20 @@ async def {function_name}(req: func.HttpRequest) -> func.HttpResponse:
 
 
         # Replace placeholders in the template with extracted values
-        html_template = AllTemplates.{filename}Document)
+        html_template = AllTemplates.{filename}Document
 
         # Extract form fields dynamically
-        {field_extractions}
+{field_extractions}
 
         # Replace placeholders in the template with extracted values       
 
-        {replace_text}
+{replace_text}
 
-        if Applicant_Name != None:
-            if DedefendantString != None:
-                title = f"{{Applicant_Name}} vs {{DefendantString}}"
-            else:
-                title = f"{{Applicant_Name}} vs State"
+        # if Applicant_Name != None:
+        #     if DedefendantString != None:
+        #         title = f"{{Applicant_Name}} vs {{DefendantString}}"
+        #     else:
+        #         title = f"{{Applicant_Name}} vs State"
 
         helper.generate_petitions(
             user_id=req_body.get("user_id"),
@@ -109,6 +118,7 @@ async def {filename_with_underscores}_get(req: func.HttpRequest) -> func.HttpRes
 
     function_app_line.append(get_func)
     function_app_line.append(function_code)
+    function_app_line.append("# end region\n\n")
 
     with open("function_app.py", "w") as f:
         f.writelines(function_app_line)

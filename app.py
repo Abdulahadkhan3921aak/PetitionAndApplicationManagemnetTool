@@ -80,7 +80,7 @@ class HTMLPreviewTool(tk.Tk):
         self.preview_label = tk.Label(self.preview_frame, text="Preview")
         self.preview_label.pack(anchor="nw")
 
-        self.preview_html = HtmlFrame(self.preview_frame)
+        self.preview_html = HtmlFrame(self.preview_frame, messages_enabled=False)
         self.preview_html.pack(fill="both", expand=True, padx=10, pady=10)
 
     def add_new_chunk(self):

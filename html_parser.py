@@ -16,6 +16,12 @@ def create_file(directory, fName):
     with open(file_path, "w") as file:
         pass  # Just create the file; no content is added
 
+    file_path = os.path.join(directory, f"{fName}SystemPrompt.txt")
+
+    # Create the file (open in write mode to create if not exists)
+    with open(file_path, "w") as file:
+        pass  # Just create the file; no content is added
+
     print(f"File created: {file_path}")
 
 
@@ -40,6 +46,8 @@ def parse_html_to_form(html_string, filename: str):
 
     prompt_tag_list = [
         "[Title]",
+        "[AI Generated]",
+        "[Ai Generated]",
         "[AI Generated Text]",
         "[Ai Generated Text]",
         "[Case Details]",
@@ -49,6 +57,8 @@ def parse_html_to_form(html_string, filename: str):
         "[Prayers]",
         "[Grounds]",
         "[Affidavit]",
+        "[Notice Body]",
+        "[AI Generated Notice Body]",
     ]
 
     replace_list = []
@@ -60,7 +70,7 @@ def parse_html_to_form(html_string, filename: str):
     # For each placeholder found, map it to the corresponding field
     for placeholder in placeholders:
         field = field_mapping.get(f"[{placeholder}]", None)
-        if field:
+        if field and field not in form["fields"]:
             form["fields"].append(field)
             if f"[{placeholder}]" not in prompt_tag_list:
                 replace_list.append({placeholder: field["name"]})
@@ -75,18 +85,23 @@ def parse_html_to_form(html_string, filename: str):
 
     with open(f"templates/{filename}.py", "w") as f:
         f.write(
-            f'{filename}Document = """ {html_string} """.replace("\\n","")\n\n\n{filename}Form = {form}.replace("\\n", "")'
+            f'{filename}Document = """ {html_string} """.replace("\\n","")\n\n\n{filename}Form = {form}'
+        )
+
+    with open(f"templates/AllTemplates.py", "a") as f:
+        f.write(
+            f"from templates.{filename} import {filename}Document, {filename}Form\n"
         )
 
     for name in file_names:
         create_file(f"models/Prompts", f"{name}")
 
-    functions_list = write_to_OpenAI(file_names=file_names)
+    write_to_OpenAI(file_names=file_names)
 
     function_app_parser(
         form=form,
         filename=filename,
         filename_with_underscores=filename_with_underscores,
         replace_list=replace_list,
-        functions_list=functions_list,
+        prompt_replace_list=prompt_replace_list,
     )

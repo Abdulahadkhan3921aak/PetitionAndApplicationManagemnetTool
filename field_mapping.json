@@ -194,7 +194,7 @@
     "[Plaintiff Son/Daughter]": {
         "label": "S/O or D/O",
         "id": "S/O_D/O",
-        "name": "SO_DO",
+        "name": "Plaintiff_SO_DO",
         "type": "radio",
         "options": [
             {
@@ -225,10 +225,17 @@
         ],
         "required": true
     },
+    "[Defendant Father Name]": {
+        "label": "Defendant Father's Name",
+        "id": "Defendant-father-name",
+        "name": "Defendant_Father_Name",
+        "type": "text",
+        "required": true
+    },
     "[Plaintiff Father Name]": {
-        "label": "Father's Name",
-        "id": "father-name",
-        "name": "Father_Name",
+        "label": "Plaintiff Father's Name",
+        "id": "Plaintiff-father-name",
+        "name": "Plaintiff_Father_Name",
         "type": "text",
         "required": true
     },
@@ -236,6 +243,20 @@
         "label": "Father's Name",
         "id": "father-name",
         "name": "Father_Name",
+        "type": "text",
+        "required": true
+    },
+    "[Defendant Address]": {
+        "label": "Defendant's Address",
+        "id": "Defendant-address",
+        "name": "Defendant_Address",
+        "type": "text",
+        "required": true
+    },
+    "[Respondent Address]": {
+        "label": "Respondent's Address",
+        "id": "Respondent-address",
+        "name": "Respondent_Address",
         "type": "text",
         "required": true
     },
@@ -254,9 +275,9 @@
         "required": true
     },
     "[Defendant Name]": {
-        "label": "Respondent's Name",
-        "id": "respondent-name",
-        "name": "Respondent_Name",
+        "label": "Defendant's Name",
+        "id": "Defendant-name",
+        "name": "Defendant_Name",
         "type": "text",
         "required": true
     },
@@ -351,10 +372,45 @@
         "type": "text",
         "required": true
     },
-    "[Advocate's Office Address]": {
-        "label": "Advocate's Office / Court Address",
+    "[Advocate Name]": {
+        "label": "Advocate's Name",
+        "id": "advocates-name",
+        "name": "Advocates_Name",
+        "type": "text",
+        "required": true
+    },
+    "[Lawyer Name]": {
+        "label": "Advocate's Name",
+        "id": "advocates-name",
+        "name": "Advocates_Name",
+        "type": "text",
+        "required": true
+    },
+    "[Advocate Of]": {
+        "label": "Advocate's Office / Court Affiliation",
         "id": "advocates-office-address",
         "name": "Office_Address",
+        "type": "text",
+        "required": true
+    },
+    "[Advocate of]": {
+        "label": "Advocate's Office / Court Affiliation",
+        "id": "advocates-office-address",
+        "name": "Office_Address",
+        "type": "text",
+        "required": true
+    },
+    "[Advocate's Office Address]": {
+        "label": "Advocate's Office / Court Affiliation",
+        "id": "advocates-office-address",
+        "name": "Office_Address",
+        "type": "text",
+        "required": true
+    },
+    "[CC Number]": {
+        "label": "C.C Number",
+        "id": "case-number",
+        "name": "CC_Number",
         "type": "text",
         "required": true
     },
@@ -362,6 +418,107 @@
         "label": "C.C Number",
         "id": "case-number",
         "name": "CC_Number",
+        "type": "text",
+        "required": true
+    },
+    "[Recipient Name]": {
+        "label": "Recipient Name",
+        "id": "recipient-name",
+        "name": "Recipient_Name",
+        "type": "text",
+        "required": true
+    },
+    "[Defendant Son/Daughter]": {
+        "label": "Recipient Type",
+        "id": "recipient-type",
+        "name": "Defendant_Son_Daughter",
+        "type": "radio",
+        "required": true,
+        "options": [
+            {
+                "label": "Son",
+                "id": "defendant-son",
+                "value": "Son"
+            },
+            {
+                "label": "Daughter",
+                "id": "defendant-daughter",
+                "value": "Daughter"
+            }
+        ]
+    },
+    "[Son/Daughter]": {
+        "label": "Recipient Type",
+        "id": "recipient-type",
+        "name": "Son_Daughter",
+        "type": "radio",
+        "required": true,
+        "options": [
+            {
+                "label": "Son",
+                "id": "recipient-son",
+                "value": "Son"
+            },
+            {
+                "label": "Daughter",
+                "id": "recipient-daughter",
+                "value": "Daughter"
+            }
+        ]
+    },
+    "[Court Of]": {
+        "label": "Advocate's Affiliation:",
+        "id": "court-of",
+        "name": "court_of",
+        "type": "text",
+        "required": true
+    },
+    "[Lawyer Contact]": {
+        "label": "Lawyer Contact",
+        "id": "lawyer-contact",
+        "name": "Lawyer_Contact",
+        "type": "text",
+        "required": true
+    },
+    "[Recipient Parent Name]": {
+        "label": "Recipient Parent Name",
+        "id": "recipient-parent-name",
+        "name": "Recipient_Parent_Name",
+        "type": "text",
+        "required": true
+    },
+    "[Recipient Address]": {
+        "label": "Recipient Address",
+        "id": "recipient-address",
+        "name": "Recipient_Address",
+        "type": "text",
+        "required": true
+    },
+    "[Subject of the Notice]": {
+        "label": "Subject of the Notice",
+        "id": "subject",
+        "name": "Subject_of_the_Notice",
+        "type": "text",
+        "required": true
+    },
+    "[Notice Body]": {
+        "label": "Notice Body",
+        "id": "notice-body",
+        "name": "AI_Genereated_Text",
+        "type": "textarea",
+        "required": false
+    },
+    "[AI Generated Notice Body]": {
+        "label": "Notice Body",
+        "id": "notice-body",
+        "name": "AI_Genereated_Text",
+        "type": "textarea",
+        "required": false
+    },
+    "[Offense]": {
+        "label": "Offense:",
+        "id": "offense",
+        "name": "Offence",
         "type": "text",
         "required": true
     },

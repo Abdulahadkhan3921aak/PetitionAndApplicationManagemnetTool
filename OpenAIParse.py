@@ -12,11 +12,24 @@ def write_to_OpenAI(file_names: list) -> list[str]:
         func_name_list.append({name: funcName})
         OpenAI_lines.append(
             f"""
-    def {funcName}(info: str):
-        promtEngineerd = open(f"{{prompts_folder}}{name}.txt").read()
-        response = llm.invoke(promtEngineerd + ":" + info)
-        return response.content
+def {funcName}(info: str):
+    promtEngineered = open(f"{{prompts_folder}}/{name}.txt").read()
+    system_prompt = open(f"{{prompts_folder}}/{name[:-6]}SystemPrompt.txt").read()
+    # Create the chat prompt with system and user messages
+    system_message = SystemMessagePromptTemplate.from_template(system_prompt)
+    user_message = HumanMessagePromptTemplate.from_template("{{promtEngineered}}: {{info}}")
 
+    # Combine the system and user messages
+    chat_prompt = ChatPromptTemplate.from_messages([system_message, user_message])
+
+    # Pass the variables (pretext and info)
+    messages = chat_prompt.format_messages(pretext=promtEngineered, info=info)
+
+    # Get the response from the model
+    response = llm(messages)
+    return response.content
+
+    
         """
         )
 
