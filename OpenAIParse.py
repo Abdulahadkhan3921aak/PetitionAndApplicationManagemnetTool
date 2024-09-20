@@ -5,13 +5,22 @@ def write_to_OpenAI(file_names: list) -> list[str]:
 
     func_name_list = []
 
+    filename_with_underscores=""
+
     for name in file_names:
-        funcName = f"get_{name}_Prompt"
+        for x in name:
+            if x != x.lower() and x != name[0]:
+                filename_with_underscores += "_"
+                filename_with_underscores += x.lower()
+            else:
+                filename_with_underscores += x.lower()
+        funcName = f"get_{filename_with_underscores}_Prompt"
         # also add _ to the name but there are no spaces in the name
         funcName = funcName.replace(" ", "_")
         func_name_list.append({name: funcName})
         OpenAI_lines.append(
             f"""
+            
 def {funcName}(info: str):
     promtEngineered = open(f"{{prompts_folder}}/{name}.txt").read()
     system_prompt = open(f"{{prompts_folder}}/{name[:-6]}SystemPrompt.txt").read()

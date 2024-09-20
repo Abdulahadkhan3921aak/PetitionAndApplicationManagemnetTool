@@ -107,7 +107,9 @@ async def {function_name}(req: func.HttpRequest) -> func.HttpResponse:
 """
 
     get_func = f"""
-# region {filename} 
+# region {filename}
+
+ 
 @app.route("{filename}", methods=["GET"])
 async def {filename_with_underscores}_get(req: func.HttpRequest) -> func.HttpResponse:
     return func.HttpResponse(
@@ -118,7 +120,7 @@ async def {filename_with_underscores}_get(req: func.HttpRequest) -> func.HttpRes
 
     function_app_line.append(get_func)
     function_app_line.append(function_code)
-    function_app_line.append("# end region\n\n")
+    function_app_line.append("\n\n# endregion\n\n")
 
     with open("function_app.py", "w") as f:
         f.writelines(function_app_line)

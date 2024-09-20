@@ -170,6 +170,20 @@
         "type": "text",
         "required": true
     },
+    "[Court]": {
+        "label": "Court Name",
+        "id": "court-name",
+        "name": "Court_Name",
+        "type": "text",
+        "required": true
+    },
+    "[Court of]": {
+        "label": "Court Name",
+        "id": "court-name",
+        "name": "Court_Name",
+        "type": "text",
+        "required": true
+    },
     "[In the Court of]": {
         "label": "Court Name",
         "id": "court-name",

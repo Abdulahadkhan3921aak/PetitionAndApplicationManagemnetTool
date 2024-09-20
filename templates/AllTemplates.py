@@ -1,7 +1,36 @@
-from templates.Testing import TestingDocument, TestingForm
-from templates.test import testDocument, testForm
-from templates.maer import maerDocument, maerForm
-from templates.test import testDocument, testForm
-from templates.test import testDocument, testForm
-from templates.testing import testingDocument, testingForm
-from templates.testing2 import testing2Document, testing2Form
+from templates.legalNotice import LegalNoticeTemplateDocument, LegalNoticeTemplateForm
+from templates.Superdari import SuperdariTemplateDocument, SuperdariTemplateForm
+from templates.legalCertificate import (
+    legalCertificateTemplateDocument,
+    legalCertificateTemplateForm,
+)
+from templates.PowerofAttorny import (
+    PowerOfAttornyTemplateDocument,
+    PowerOfAttornyTemplateForm,
+)
+from templates.EarlyHearingApplication import (
+    EarlyHearingAplicationDocument,
+    EarlyHearingAplicationForm,
+)
+from templates.DissolusionOfMarriage import (
+    DissolutionOfMarriageDocument,
+    DissolutionOfMarriageForm,
+)
+from templates.Template_strings import *
+from templates.PreArrestBailApplication import (
+    PreArrestBailApplicationDocument,
+    PreArrestBailApplicationForm,
+)
+from templates.PreArrestBailCertificate import (
+    PreArrestBailCertificateDocument,
+    PreArrestBailCertificateForm,
+)
+from templates.SuitForSpecificPerformance import (
+    SuitForSpecificPerformanceDocument,
+    SuitForSpecificPerformanceForm,
+)
+from templates.ApplicationForConsolidationOfCasesInTheSameCourt import (
+    ApplicationForConsolidationOfCasesInTheSameCourtDocument,
+    ApplicationForConsolidationOfCasesInTheSameCourtForm,
+)
+from templates.ApplicationForConsolidationOfCasesInTheSameCourt import ApplicationForConsolidationOfCasesInTheSameCourtDocument, ApplicationForConsolidationOfCasesInTheSameCourtForm
